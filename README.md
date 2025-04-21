@@ -1,6 +1,3 @@
-# Atividade Somativa - Semana 4 (React)
-
-Este projeto foi desenvolvido como parte da atividade somativa da Semana 4 da disciplina de Desenvolvimento Front-End com React, ministrada na PUCPR.
 
 ## 📚 Conteúdo abordado
 
