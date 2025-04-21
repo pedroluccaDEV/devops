@@ -1,24 +1,26 @@
-name: CI - Code Check
+name: CI - Build Simulado
 
 on:
+  push:
+    branches: [main, master]
   pull_request:
-    branches:
-      - main
+    branches: [main, master]
 
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout do código
+      - name: Checkout código
         uses: actions/checkout@v3
 
-      - name: Configura Python
-        uses: actions/setup-python@v4
+      - name: Setup Node.js (exemplo, muda se for outra stack)
+        uses: actions/setup-node@v3
         with:
-          python-version: 3.10
+          node-version: '18'
 
-      - name: Verifica se o repositório tem arquivos
-        run: ls -la
+      - name: Instalar dependências
+        run: npm install
 
-      - name: Roda verificação fake
-        run: echo "CI rodando com sucesso!"
+      - name: Rodar build
+        run: npm run build
