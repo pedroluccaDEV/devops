@@ -1,0 +1,24 @@
+name: CI - Code Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Configura Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
+      - name: Verifica se o repositório tem arquivos
+        run: ls -la
+
+      - name: Roda verificação fake
+        run: echo "CI rodando com sucesso!"
