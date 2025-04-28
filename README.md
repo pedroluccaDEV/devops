@@ -9,7 +9,7 @@ Durante as quatro primeiras semanas foram trabalhados os seguintes tópicos:
 - Condicional render (exibir mensagens com base em condições)
 - Trabalhar com arrays (a partir da semana 4)
 
-## 🎯 Objetivo da atividade
+## 🎯 Objetivo da atividade:
 
 Criar uma aplicação com um único componente que contenha:
 
