@@ -1,0 +1,17 @@
+name: Alertar no Discord
+
+on:
+  push:
+    branches:
+      - main  # dispara quando tiver push ou merge na branch main
+
+jobs:
+  alerta:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar alerta para o Discord
+        run: |
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d '{"content": "🚀 Novo push/merge no branch main!"}' \
+               https://discord.com/api/webhooks/1366393334372896778/h7mnvsQqrxbL4MqORQozCT0bYa-UYsrW4cdCdbL-5qz2MFZSfUNRYoadCGF_Bk8bBhwZ
