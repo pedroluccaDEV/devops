@@ -3,15 +3,24 @@ name: Alertar no Discord
 on:
   push:
     branches:
-      - main  # dispara quando tiver push ou merge na branch main
+      - main
+
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
 
 jobs:
   alerta:
+    if: github.event.pull_request.merged == true || github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Enviar alerta para o Discord
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d '{"content": "🚀 Novo push/merge no branch main!"}' \
+               -d "{
+                 \"content\":Novo evento em **${{ github.repository }}**!\nAutor: **${{ github.actor }}**\nMensagem: _${{ github.event.head_commit.message || 'Merge Pull Request' }}_\n[Ver no GitHub](https://github.com/${{ github.repository }}/commit/${{ github.sha }})
+               \"}" \
                https://discord.com/api/webhooks/1366393334372896778/h7mnvsQqrxbL4MqORQozCT0bYa-UYsrW4cdCdbL-5qz2MFZSfUNRYoadCGF_Bk8bBhwZ
