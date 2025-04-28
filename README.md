@@ -20,7 +20,7 @@ Criar uma aplicação com um único componente que contenha:
 
 A lógica de verificação compara os valores digitados com os valores definidos no código. Se estiverem corretos, é exibida a mensagem **"Acessado com sucesso!"**. Caso contrário, exibe **"Usuário ou senha incorretos!"**.
 
-## ✅ Validação implementada
+## ✅ Validação implementada:
 
 O sistema verifica se o email e senha são:
 
