@@ -1,5 +1,5 @@
 
-## 📚 Conteúdo abordado
+## 📚 Conteúdo abordado:
 
 Durante as quatro primeiras semanas foram trabalhados os seguintes tópicos:
 
