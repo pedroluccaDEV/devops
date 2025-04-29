@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build_and_deploy:
@@ -16,8 +19,13 @@ jobs:
       - name: Instalar dependências
         run: npm install
 
+      - name: Rodar testes
+        run: npm test
+
       - name: Buildar projeto
+        if: success()
         run: CI=false npm run build
 
-      - name: Deploy (
+      - name: Deploy (placeholder)
+        if: success()
         run: echo "Deploy feito com sucesso"
